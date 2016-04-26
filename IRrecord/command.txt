@@ -1,0 +1,7 @@
+
+
+const short VOLUME_PLUS = 0x481
+const short VOLUME_MINUS = 0xC81
+const short POWER = 0xA81
+const short SLEEP = 0x061
+
