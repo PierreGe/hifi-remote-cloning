@@ -5,7 +5,7 @@ import logging
 from sys import argv
 import serial
 
-SERIAL_PORT = "/dev/ttyUSB0"
+SERIAL_PORT = "/dev/ttyACM0"
 SERIAL_BAUDRATE = "9600"
 
 
@@ -14,10 +14,10 @@ class ArduinoSerial(object):
     def __init__(self):
         self.ser = serial.Serial(SERIAL_PORT,SERIAL_BAUDRATE, timeout=3) 
 
-    def readLine():
+    def readLine(self):
         return self.ser.readline()
 
-    def writeStr(towrite):
+    def writeStr(self,towrite):
         self.ser.write(bytes(towrite))
 
     def close(self):
@@ -34,7 +34,7 @@ def main():
         return
     ardSerial = ArduinoSerial()
     ardSerial.writeStr(symbol)
-    ardSerial.readline()
+    print(ardSerial.readLine())
     ardSerial.close()
 
 
